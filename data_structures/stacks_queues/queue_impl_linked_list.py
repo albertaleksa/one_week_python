@@ -28,24 +28,26 @@ class Queue:
             self.last = None
         self.first = self.first.next
         self.length -= 1
-        return pop_node
+        return pop_node.value
 
     def peek(self):
         if self.first:
             return self.first.value
         return None
 
-my_queue = Queue()
-my_queue.enqueue("first")
-my_queue.enqueue("second")
-my_queue.enqueue("third")
-print(my_queue.peek())
-item = my_queue.dequeue()
-print(item.value)
-print(my_queue.peek())
-item = my_queue.dequeue()
-print(item.value)
-print(my_queue.peek())
-item = my_queue.dequeue()
-print(item.value)
-print(my_queue.peek())
+
+if __name__ == "__main__":
+    my_queue = Queue()
+    my_queue.enqueue("first")
+    my_queue.enqueue("second")
+    my_queue.enqueue("third")
+    print(my_queue.peek())
+    item = my_queue.dequeue()
+    print(item.value)
+    print(my_queue.peek())
+    item = my_queue.dequeue()
+    print(item.value)
+    print(my_queue.peek())
+    item = my_queue.dequeue()
+    print(item.value)
+    print(my_queue.peek())
