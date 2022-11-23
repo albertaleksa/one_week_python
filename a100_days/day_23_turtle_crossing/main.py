@@ -23,11 +23,12 @@ def start():
         time.sleep(0.1)
         screen.update()
 
+        car_manager.create_car()
         car_manager.move()
 
         # Detect if turtle hits the top edge
-        if player.ycor() > FINISH_LINE_Y:
-            player.win()
+        if player.is_at_finish_line():
+            player.go_to_start()
             scoreboard.increase_level()
             car_manager.increase_cars_speed()
 

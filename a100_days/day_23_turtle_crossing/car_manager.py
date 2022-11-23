@@ -12,12 +12,11 @@ class Car(Turtle):
         super().__init__()
         self.shape("square")
         self.penup()
-        self.shapesize(stretch_wid=1, stretch_len=3)
+        self.shapesize(stretch_wid=1, stretch_len=2)
         self.color(choice(COLORS))
         self.speed("fastest")
-        random_x = randint(-280, 4000)
-        random_y = randrange(-260, 280, 20)
-        self.goto(random_x, random_y)
+        random_y = randrange(-260, 260, 20)
+        self.goto(300, random_y)
 
 
 class CarManager:
@@ -25,12 +24,13 @@ class CarManager:
     def __init__(self):
         self.cars = []
         self.move_distance = STARTING_MOVE_DISTANCE
-        self.create_cars()
+        self.create_car()
 
-    def create_cars(self):
-        for _ in range(100):
-            car = Car()
-            self.cars.append(car)
+    def create_car(self):
+        random_chance = randint(1, 6)
+        if random_chance == 1:
+            new_car = Car()
+            self.cars.append(new_car)
 
     def move(self):
         for car in self.cars:
