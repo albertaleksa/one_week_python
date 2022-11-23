@@ -15,7 +15,7 @@ class Car(Turtle):
         self.shapesize(stretch_wid=1, stretch_len=3)
         self.color(choice(COLORS))
         self.speed("fastest")
-        random_x = randint(-280, 280)
+        random_x = randint(-280, 4000)
         random_y = randrange(-260, 280, 20)
         self.goto(random_x, random_y)
 
@@ -25,7 +25,10 @@ class CarManager:
     def __init__(self):
         self.cars = []
         self.move_distance = STARTING_MOVE_DISTANCE
-        for _ in range(30):
+        self.create_cars()
+
+    def create_cars(self):
+        for _ in range(100):
             car = Car()
             self.cars.append(car)
 

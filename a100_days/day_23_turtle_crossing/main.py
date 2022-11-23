@@ -32,6 +32,10 @@ def start():
             car_manager.increase_cars_speed()
 
         # Detect collision with car
+        for car in car_manager.cars:
+            if car.distance(player) < 20:
+                game_is_on = False
+                scoreboard.game_over()
 
 
         """
