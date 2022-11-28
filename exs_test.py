@@ -1,10 +1,24 @@
-def func():
-    global glob1
-    print(f"glob1 = {glob1}")
+class Mixin:
+    attr = 0
+    def mixin_method(self):
+        print("Mixin method")
 
-    glob1 = 5
+
+class Class1(Mixin):
+    def method1(self):
+        print("Class1 method")
+
+class Class2(Class1, Mixin):
+    def method2(self):
+        print("Class2 method")
 
 
-glob1 = 10
-func()
-print(f"glob1 = {glob1}")
+c1 = Class1()
+c1.method1()
+c1.mixin_method()
+print()
+
+c2 = Class2()
+c2.method2()
+c2.method1()
+c2.mixin_method()
