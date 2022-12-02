@@ -34,9 +34,10 @@ def start():
 
             guessed_states.append(answer_state)
         elif answer_state == "exit".title():
-            missed_states = data[~data.state.isin(guessed_states)]
-            print(missed_states)
-            missed_states.to_csv("learn.csv")
+            missed_states = [state for state in all_states if state not in guessed_states]
+#           missed_states = data[~data.state.isin(guessed_states)]
+            new_data = pandas.DataFrame(missed_states)
+            new_data.to_csv("learn.csv")
             break
 
 
