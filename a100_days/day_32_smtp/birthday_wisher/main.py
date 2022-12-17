@@ -44,9 +44,7 @@ if __name__ == '__main__':
         name = name_list[i]
         email = email_list[i]
         # Pick a random letter from letter templates
-        random_number = random.randint(1, 3)
-        print(random_number)
-        letter_file_name = f"letter_templates/letter_{random_number}.txt"
+        letter_file_name = f"letter_templates/letter_{random.randint(1, 3)}.txt"
         with open(letter_file_name) as file:
             letter = file.read()
         # Replace the [NAME] with person's actual name from csv
