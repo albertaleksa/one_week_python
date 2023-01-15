@@ -2,10 +2,14 @@ import pandas
 import datetime as dt
 import random
 import smtplib
+import os
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+MY_EMAIL = os.environ['MY_EMAIL']
+MY_PASSWORD = os.environ['MY_EMAIL_PASSWORD']
 
 PLACEHOLDER = "[NAME]"
-MY_EMAIL = "albert.aleksa.by@gmail.com"
-MY_PASSWORD = "cxmvdmkzhurxlakm"
 ##################### Extra Hard Starting Project ######################
 
 # 1. Update the birthdays.csv
