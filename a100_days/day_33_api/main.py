@@ -2,12 +2,16 @@ import requests
 from datetime import datetime
 import smtplib
 import time
+import os
+from dotenv import load_dotenv
 
 MY_LAT = 30.267153
 MY_LONG = -97.743057
 PLACEHOLDER = "[NAME]"
-MY_EMAIL = "albert.aleksa.by@gmail.com"
-MY_PASSWORD = "cxmvdmkzhurxlakm"
+
+load_dotenv(override=True)
+MY_EMAIL = os.environ['MY_EMAIL']
+MY_PASSWORD = os.environ['MY_EMAIL_PASSWORD']
 
 
 def get_iss_position():
